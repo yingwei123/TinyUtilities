@@ -9,6 +9,6 @@ import (
 
 // RegisterPageRoute handles serving the static react frontend files
 func (a *App) RegisterPageRoute(router *mux.Router) {
-	router.PathPrefix("/assets/").Handler(http.StripPrefix("/assets/", http.FileServer(http.Dir("../../frontend/dist/assets"))))
-	router.PathPrefix("/").HandlerFunc(handler.RootHandler())
+	router.PathPrefix("/assets/").Handler(http.StripPrefix("/assets/", http.FileServer(http.Dir(a.Config.StaticDir+"/assets"))))
+	router.PathPrefix("/").HandlerFunc(handler.RootHandler(*a.Config))
 }

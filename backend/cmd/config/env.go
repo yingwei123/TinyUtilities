@@ -12,6 +12,7 @@ type Config struct {
 	AtlasURI      string `env:"ATLAS_URI,required"`
 	ServerBaseURL string `env:"SERVER_BASE_URL,default=http://localhost"`
 	ServerPort    uint   `env:"PORT,default=8081"`
+	StaticDir     string `env:"STATIC_DIR,default=./frontend/dist"`
 }
 
 func LoadEnvironment() (Config, error) {
