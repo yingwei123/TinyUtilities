@@ -11,7 +11,7 @@ import (
 type Config struct {
 	AtlasURI      string `env:"ATLAS_URI,required"`
 	ServerBaseURL string `env:"SERVER_BASE_URL,default=http://localhost"`
-	ServerPort    uint   `env:"SERVER_PORT,default=8081"`
+	ServerPort    uint   `env:"PORT,default=8081"`
 }
 
 func LoadEnvironment() (Config, error) {
@@ -24,6 +24,7 @@ func LoadEnvironment() (Config, error) {
 
 	err = envdecode.Decode(&cfg)
 	if err != nil {
+		log.Printf("could not load environment variables: %v", err)
 		return cfg, err
 	}
 
