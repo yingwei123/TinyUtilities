@@ -1,5 +1,5 @@
 # Stage 1: Build the frontend
-FROM node:16 AS frontend-builder
+FROM node:20.10.0 AS frontend-builder
 WORKDIR /frontend
 
 # Copy and install frontend dependencies
@@ -30,7 +30,7 @@ WORKDIR /root/
 COPY --from=backend-builder /app/myapp .
 
 # Copy the frontend static files
-COPY --from=frontend-builder /frontend/build ./frontend
+COPY --from=frontend-builder /frontend/dist ./frontend
 
 # Expose the port that your application will run on
 EXPOSE 8080
