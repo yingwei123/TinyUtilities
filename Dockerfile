@@ -23,7 +23,7 @@ COPY ./backend ./backend
 RUN cd ./backend/cmd && go build -o /app/myapp
 
 # Stage 3: Create the final image with both frontend and backend
-FROM alpine:latest
+FROM golang:1.17 AS runtime
 WORKDIR /root/
 
 # Install libc compatibility libraries
