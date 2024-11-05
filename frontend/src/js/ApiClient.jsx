@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 // Use a default value if the environment variable is not set
-const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080';
-
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
 const ApiClient = {
     makeRequest: async (method, route, data = {}, responseType = 'json') => {
         try {
