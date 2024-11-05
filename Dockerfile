@@ -26,6 +26,9 @@ RUN cd ./backend/cmd && go build -o /app/myapp
 FROM alpine:latest
 WORKDIR /root/
 
+# Install libc compatibility libraries
+RUN apk add --no-cache libc6-compat
+
 # Copy the built Go app
 COPY --from=backend-builder /app/myapp .
 
