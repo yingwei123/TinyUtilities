@@ -1,6 +1,8 @@
 # TinyUtils - URL Shortener & QR Code Generator
 
 TinyUtils is a web application that combines URL shortening capabilities with QR code generation, providing users with a convenient way to manage their shortened URLs and create various types of QR codes.
+https://tinyutil-720d25fb202c.herokuapp.com/ 
+^ too poor for a custom domain :')
 
 ## Features
 
