@@ -11,7 +11,6 @@ const HomePage = ({ activeContent, onContentChange }) => {
     const [tinyUrl, setTinyUrl] = useState(null);
 
     const handleQRCodeGenerated = useCallback((imageUrl, downloadFunction) => {
-        console.log('QR Code generated:', imageUrl); // Debug log
         setQRCodeImage(imageUrl);
         setHandleDownload(() => downloadFunction);
     }, []);
