@@ -20,9 +20,6 @@ func main() {
 	log.Printf("starting server on port %d\n", cfg.ServerPort)
 
 	db := repository.CreateMongoClient(cfg.AtlasURI)
-	defer func() {
-		db.Disconnect()
-	}()
 
 	go func() {
 		signalChan := make(chan os.Signal, 1)
